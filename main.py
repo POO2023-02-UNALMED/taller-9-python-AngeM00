@@ -21,6 +21,7 @@ def getOperacion(operator):
     indice+= 1
 
 def calcular():
+    global indice
     global operation
     estado = True
     num1 = ""
@@ -65,9 +66,11 @@ def calcular():
     elif(operation == "/"):
         resultado = num1 / num2
     
+    cantidad = len(str(resultado))
+    indice+=cantidad
     pantalla.insert(0,resultado)
                 
-#root.resizable(0,0)
+root.resizable(0,0)
 root.geometry("400x270")
 
 # Configuración pantalla de salida 
